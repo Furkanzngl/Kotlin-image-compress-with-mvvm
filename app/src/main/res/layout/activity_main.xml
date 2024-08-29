@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- CardView for the image preview and buttons -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:background="@android:color/darker_gray"
+                android:visibility="visible" />
+
+            <!-- Button to choose an image -->
+            <Button
+                android:id="@+id/chooseImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose Image"
+                android:layout_marginTop="16dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+
+            <!-- Button to compress the chosen image -->
+            <Button
+                android:id="@+id/compressImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compress Image"
+                android:layout_marginTop="8dp"
+                app:backgroundTint="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:enabled="false" />
+
+            <!-- Button for custom compression settings -->
+            <Button
+                android:id="@+id/customCompressButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom Compress"
+                android:layout_marginTop="8dp"
+                app:backgroundTint="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:enabled="false" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for compressed image preview and download button -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCompressedImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/compressedImageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerInside"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/downloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                app:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
